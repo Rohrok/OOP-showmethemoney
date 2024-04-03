@@ -6,10 +6,13 @@
 - 항공사 직원이 항공권을 발급하고 발급정보를 관리하는 항공권 발급관리 시스템입니다.
 
 <br>
+
 ## 팀원 구성
 <div align="center">
+     
      |**👑노영록**|**이창민**|**이은솔**|
      |[@Rohrok](https://github.com/Rohrok)|[@l2chmnl](https://github.com/l2chmnl)|[@lucinda96](https://github.com/lucinda96)| 
+     
 </div>
 
 <br>
