@@ -9,8 +9,8 @@ import java.util.Scanner;
 public class FlightService {
 
     private List<FlightInformation> arrivalList = null;
-    private Scanner sc = new Scanner(System.in);
-    private CommonInformation commonInfo = new CommonInformation();
+    private Scanner scanner = new Scanner(System.in);
+    private CommonInformation commonInformation = new CommonInformation();
 
     public FlightService() {
         arrivalList = new ArrayList<>();
@@ -18,7 +18,6 @@ public class FlightService {
 
 
     /**
-     *
      * @param name
      * @param age
      * @param countryCode
@@ -26,7 +25,7 @@ public class FlightService {
     public void addFlightInfo(String name, int age, String countryCode){
 
         // 티켓넘버 생성
-        String tikectNum = commonInfo.createTicketNumber(countryCode);
+        String tikectNum = commonInformation.createTicketNumber(countryCode);
         //승객정보 등록
         FlightInformation flightInformation = new FlightInformation(name,age,tikectNum);
         arrivalList.add(flightInformation);
@@ -35,11 +34,10 @@ public class FlightService {
 
     public String inputUserName(){
 
-        String name = "";
         while (true) {
             System.out.print("이름을 입력하세요 : ");
-            name =  sc.nextLine().replaceAll(" ","");
-            if(commonInfo.checkkInputName(name)){
+            String name =  scanner.nextLine().replaceAll(" ","");
+            if(commonInformation.checkInputName(name)){
                 return name.toUpperCase();
             }
         }
@@ -47,33 +45,43 @@ public class FlightService {
     }
 
     public String inputArrivalCountryInfo(){
+        while (true){
+            System.out.println("""
+                **********************
+                === 도착지를 선택하세요 ===
+                        미국
+                        중국
+                        일본
+                        독일
+                        영국
+                        이탈리아
+                        프랑스
+                        멕시코
+                        남극
+                        홍콩
+                ======================
+                **********************""");
+            System.out.print("도착지를 입력해주세요. : ");
+            String destination = scanner.nextLine();
+            String countryCode = commonInformation.getCountry(destination);
+            if(countryCode !=null){
+                return countryCode;
+            }
+        }
 
-        System.out.println("""
-                1. 미국
-                2. 중국
-                3. 일본
-                4. 독일
-                5. 영국
-                6. 이탈리아
-                7. 프랑스
-                8. 멕시코
-                9. 남극
-                10. 홍콩""");
-        System.out.print("위의 나라에서 도착지를 입력해주세요. : ");
-        String arrivalCountry = sc.nextLine();
-        String countryCode = commonInfo.countryCode(arrivalCountry);
-        return countryCode;
     }
 
     public int inputCheckAge(){
+        while(true){
+            System.out.print("나이를 입력하세요 : ");
+            int age = scanner.nextInt();
+            if(age>=19){
+                return age;
+            }else{
+                System.out.println("19세 미만은 티켓발급이 불가능합니다.");
+            }
 
-        System.out.print("나이를 입력하세요 : ");
-        int age = sc.nextInt();
-        if(age<19){
-
-            return 0;
         }
-        return age;
     }
 
 }

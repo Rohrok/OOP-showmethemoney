@@ -1,14 +1,11 @@
 package com.smtm.atm.service;
 
-import com.smtm.atm.dto.FlightInformation;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 public class CommonInformation {
 
-    private static final String REGEX = "^[a-zA-Z]*$";
+    private static final String REGEX_ONLY_ENG = "^[a-z|A-Z]*$";
+    private static final String REGEX_ONLY_KOR = "^[가-힣]*$";
 
 
     /**
@@ -19,12 +16,12 @@ public class CommonInformation {
      *          영문으로만 이뤄진 경우 true
      *          영문이외(한글, 특수문자 다른언어)인 경우 false
      * */
-    public boolean checkkInputName(String name) {
+    public boolean checkInputName(String name) {
 
         if(name.isBlank()){
             System.out.println("이름을 입력해주세요.");
             return false;
-        } else if (!name.matches(REGEX)) {
+        } else if (!name.matches(REGEX_ONLY_ENG)) {
             System.out.println("이름은 영문만 입력해주세요.");
             return false;
         }
@@ -39,25 +36,40 @@ public class CommonInformation {
 
     //항공권 번호 생성
     public String createTicketNumber(String ticket) {
-        int randomNum = new Random().nextInt(999)+1;
+        int randomNum = new Random().nextInt(100,999);
         String tikecketNum = ticket+ (Integer.toString(randomNum));
         System.out.println("tikecketNum = " + tikecketNum);
         return tikecketNum;
     }
 
-    //국가 코드 반환
+
+    public String getCountry(String destination) {
+
+        boolean isValid = destination.matches(REGEX_ONLY_KOR);
+
+        if (!isValid) {
+            System.out.println("도착지를 한글로 입력 해주세요.");
+            return null;
+        }
+
+        CommonInformation commonInformation = new CommonInformation();
+        String code = commonInformation.getCountryCode(destination);
+        return code;
+    }
+
     /**
      * 입력받은 도착지를 영문코드로 반환
-     * @param code
-     *        입력받은 도착지
+     *
+     * @param code 입력받은 도착지
      * @return String
-     *         도착지의 영문코드
-     * */
-    public String countryCode(String code) {
+     * 도착지의 영문코드
+     */
+//국가 코드 반환
+    public String getCountryCode(String code) {
 
-        switch (code){
+        switch (code) {
             case "미국":
-                return "UK";
+                return "USA";
             case "중국":
                 return "CHN";
             case "일본":
@@ -77,7 +89,7 @@ public class CommonInformation {
             case "홍콩":
                 return "HKG";
             default:
-                System.out.println("일치하는 도착지가 없습니다. 다시 입력해주세요.");
+                System.out.println("도착지를 다시 입력해주세요.");
         }
         return null;
     }
