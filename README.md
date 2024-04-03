@@ -8,8 +8,8 @@
 <br>
 ## 팀원 구성
 <div align="center">
-     | **👑노영록** | **이창민** | **이은솔** |
-     | [@Rohrok](https://github.com/Rohrok) | [@l2chmnl](https://github.com/l2chmnl) | [@lucinda96](https://github.com/lucinda96) | 
+     |**👑노영록**|**이창민**|**이은솔**|
+     |[@Rohrok](https://github.com/Rohrok)|[@l2chmnl](https://github.com/l2chmnl)|[@lucinda96](https://github.com/lucinda96)| 
 </div>
 
 <br>
