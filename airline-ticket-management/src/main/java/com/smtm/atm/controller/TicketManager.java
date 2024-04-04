@@ -24,17 +24,19 @@ public class TicketManager {
         switch (menu){
             case 1:
                 String name = flightService.inputUserName();
-                String arrival = flightService.inputArrivalCountryInfo();
+                String[] arrival = flightService.inputArrivalCountryInfo().split(",");
                 int age = flightService.inputCheckAge();
-                flightService.addFlightInfo(name,age,arrival);
+                flightService.addFlightInfo(name,age,arrival[0],arrival[1]);
                 System.out.println("항공권이 발급되었습니다.");
                 break;
             case 2:
-
+                flightService.printAllTickets();
                 break;
             case 3:
+                flightService.searchTicketWithName();
                 break;
             case 4:
+                flightService.updateTicket();
                 break;
             case 0:
                 System.out.println("시스템을 종료합니다.");
