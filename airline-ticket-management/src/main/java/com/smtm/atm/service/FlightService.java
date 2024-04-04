@@ -23,13 +23,13 @@ public class FlightService {
      * @param age
      * @param countryCode
      */
-    public void addFlightInfo(String name, int age, String countryCode) {
+    public void addFlightInfo(String name, int age, String arrival ,String countryCode) {
 
         // 티켓넘버 생성
         /*tikect>> ticket*/
         String ticketNum = commonInformation.createTicketNumber(countryCode);
         //승객정보 등록
-        FlightInformation flightInformation = new FlightInformation(name,age,ticketNum); // 전달인자 구성에 arrival 누락되어있습니다!
+        FlightInformation flightInformation = new FlightInformation(name,age,arrival,ticketNum);
         arrivalList.add(flightInformation);
         System.out.println(arrivalList.get(0).toString());
     }
@@ -68,7 +68,7 @@ public class FlightService {
             String countryCode = commonInformation.getCountry(destination);
 
             if (countryCode != null) {
-                return countryCode;
+                return destination + "," + countryCode;
             }
         }
 
