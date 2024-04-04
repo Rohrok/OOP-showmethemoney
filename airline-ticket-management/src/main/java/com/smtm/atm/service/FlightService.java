@@ -37,11 +37,8 @@ public class FlightService {
 
 
         while (true) {
-
-            String name = "";
             System.out.print("이름을 입력하세요 : ");
-
-            name = scanner.nextLine().replaceAll(" ", "");
+            String name = scanner.nextLine().replaceAll(" ", "");
             if (commonInformation.checkInputName(name)) {
                 return name.toUpperCase();
             }
@@ -81,6 +78,7 @@ public class FlightService {
         while(true){
             System.out.print("나이를 입력하세요 : ");
             int age = scanner.nextInt();
+            scanner.nextLine();
             if(age>=19){
                 return age;
             }else{
