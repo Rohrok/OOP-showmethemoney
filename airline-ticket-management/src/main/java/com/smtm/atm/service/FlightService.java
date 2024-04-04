@@ -37,8 +37,10 @@ public class FlightService {
 
 
         while (true) {
+
             String name = "";
             System.out.print("이름을 입력하세요 : ");
+
             name = scanner.nextLine().replaceAll(" ", "");
             if (commonInformation.checkInputName(name)) {
                 return name.toUpperCase();
@@ -88,87 +90,6 @@ public class FlightService {
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public boolean isNull(){
         if (arrivalList.isEmpty()) {
             System.out.println("예약 내역이 존재하지 않습니다.");
@@ -183,7 +104,6 @@ public class FlightService {
             }
         }
     }
-
 
     public int searchTicketWithName(){
         if (isNull()){
@@ -202,13 +122,10 @@ public class FlightService {
         return 0;
     }
 
-    public void updateTicket(String name, String code, String destination) {
-        for (FlightInformation flightInformation : arrivalList) {
-            if (flightInformation.getPassengerName().equals(name)) {
-                flightInformation.setFlightTicketCode(code);
-                flightInformation.setArrival(destination);
-            }
-        }
+    public void updateTicketInformation(int index, String ticketNumber, String destination) {
+        arrivalList.get(index).setFlightTicketCode(ticketNumber);
+        arrivalList.get(index).setArrival(destination);
+
     }
 
     public void updateTicket(){
@@ -233,7 +150,30 @@ public class FlightService {
                     }
                 }
             case 2 :
+                String userName = null;
+                String ticketNumber = null;
+                String destination = null;
+                int index = 0;
 
+                while (true) {
+
+                    // 이름 검색해서 index 반환
+                    index = searchTicketWithName();
+
+                    //arrival에 미국, USA 담기    "미국,USA".split
+                    String[] arrival = inputArrivalCountryInfo().split(",");
+
+                    //USA 코드로 티켓넘버 생성하고 ticketNumber에 저장
+                    CommonInformation commonInformation = new CommonInformation();
+                    ticketNumber = commonInformation.createTicketNumber(arrival[1]);
+
+                    destination = arrival[0];
+
+                    break;
+                }
+
+                updateTicketInformation(index,ticketNumber, destination);
+                break;
         }
     }
 
@@ -241,12 +181,6 @@ public class FlightService {
         System.out.print("변경할 ");
         return inputUserName();
     }
-
-
-
-
-
-
 
 //    public void updateTicketWithName(){
 //        if (arrivalList.isEmpty()) {
@@ -256,7 +190,5 @@ public class FlightService {
 //        printAllTickets();
 //        searchTicketWithName();
 //    }
-
-
 
 }

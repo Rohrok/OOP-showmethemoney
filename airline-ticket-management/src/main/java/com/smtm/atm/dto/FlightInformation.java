@@ -11,6 +11,8 @@ public class FlightInformation extends UserInformation {
     private String flightTicketCode;
     public static final String DEPARTURE = "KOR";
     private String arrival;
+    private String passengerName;
+
 
     public FlightInformation(String flightTicketCode) {
         this.flightTicketCode = flightTicketCode;
@@ -38,6 +40,13 @@ public class FlightInformation extends UserInformation {
         this.arrival = arrival;
     }
 
+    public String getPassengerName() {
+        return passengerName;
+    }
+
+    public void setPassengerName(String passengerName) {
+        this.passengerName = passengerName;
+    }
 
     @Override
     public String toString() {
