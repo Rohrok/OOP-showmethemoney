@@ -55,7 +55,7 @@ public class FlightInformation extends UserInformation {
         return "========================================" +
                "\n이름 : " + getName() +
                " | 나이 : " + getAge() +
-               "\n항공권 번호 : "  + getArrival() +
+               "\n 항공권 번호 : "  + getArrival() +
                "\n출발지" + FlightInformation.DEPARTURE +
                " | 도착지 : " + getFlightTicketCode() +
                "\n========================================" ;

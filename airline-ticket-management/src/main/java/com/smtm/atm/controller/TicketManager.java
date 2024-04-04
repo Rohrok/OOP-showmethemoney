@@ -1,9 +1,7 @@
 package com.smtm.atm.controller;
 
-import com.smtm.atm.service.CommonInformation;
 import com.smtm.atm.service.FlightService;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TicketManager {
