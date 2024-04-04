@@ -25,12 +25,10 @@ public class FlightService {
     public void addFlightInfo(String name, int age, String arrival ,String countryCode) {
 
         // 티켓넘버 생성
-        /*tikect>> ticket*/
         String ticketNum = commonInformation.createTicketNumber(countryCode);
         //승객정보 등록
         FlightInformation flightInformation = new FlightInformation(name,age,arrival,ticketNum);
         arrivalList.add(flightInformation);
-        System.out.println(arrivalList.get(0).toString());
     }
 
     public String inputUserName() {
@@ -106,7 +104,7 @@ public class FlightService {
         if (isNull()){
             return 0;
         } else {
-            System.out.print("검색할 ");
+            System.out.print("선택할 ");
             String name = inputUserName();
 
             for (int i = 0; i < arrivalList.size(); i++) {
@@ -145,9 +143,10 @@ public class FlightService {
                     int index = searchTicketWithName();
                     if (index != 0) {
                         arrivalList.get(index).setName(nameForUpdate());
-                        System.out.println(arrivalList.get(index).toString());
                         System.out.println("변경이 완료되었습니다.");
+                        break;
                     }
+                    break;
                 }
             case 2 :
                 String userName = null;
