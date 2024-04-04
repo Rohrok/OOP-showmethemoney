@@ -12,6 +12,7 @@ public class TicketManager {
 
         Scanner scanner = new Scanner(System.in);
         FlightService flightService = new FlightService();
+        flightService.setting(); ///////
         System.out.println("""
                 1. 항공권 발급
                 2. 항공권 정보 표시
@@ -30,11 +31,13 @@ public class TicketManager {
                 System.out.println("항공권이 발급되었습니다.");
                 break;
             case 2:
-
+                flightService.printAllTickets();
                 break;
             case 3:
+                flightService.searchTicketWithName();
                 break;
             case 4:
+                flightService.updateTicket();
                 break;
             case 0:
                 System.out.println("시스템을 종료합니다.");

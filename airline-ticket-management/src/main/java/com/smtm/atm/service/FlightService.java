@@ -8,13 +8,21 @@ import java.util.Scanner;
 
 public class FlightService {
 
-    private List<FlightInformation> arrivalList = null;
+    private List<FlightInformation> arrivalList = new ArrayList<>();
+
     private Scanner scanner = new Scanner(System.in);
     private CommonInformation commonInformation = new CommonInformation();
 
     public FlightService() {
-        arrivalList = new ArrayList<>();
+
     }
+
+    /**/
+    public void setting(){
+        arrivalList.add(0, new FlightInformation("LEECHANGMIN", 30, "USA"));
+    }
+
+
 
 
     /**
@@ -23,13 +31,16 @@ public class FlightService {
      * @param countryCode
      * */
     public void addFlightInfo(String name, int age, String countryCode){
+        int count = 0; /*필요해 보여서 for index 사용 가능 하면 static 해도 될 듯?*/
 
         // 티켓넘버 생성
-        String tikectNum = commonInformation.createTicketNumber(countryCode);
+        /*tikect>> ticket*/
+        String ticketNum = commonInformation.createTicketNumber(countryCode);
         //승객정보 등록
-        FlightInformation flightInformation = new FlightInformation(name,age,tikectNum);
+        FlightInformation flightInformation = new FlightInformation(name,age,ticketNum); // 전달인자 구성에 arrival 누락되어있습니다!
         arrivalList.add(flightInformation);
-        System.out.println(arrivalList.get(0).toString());
+        System.out.println(arrivalList.get(count));
+
     }
 
     public String inputUserName(){
@@ -83,5 +94,167 @@ public class FlightService {
 
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public boolean isNull(){
+        if (arrivalList.isEmpty()) {
+            System.out.println("예약 내역이 존재하지 않습니다.");
+            return true;
+        }
+        return false;
+    }
+    public void printAllTickets(){
+        if (!isNull()) {
+            for (int i = 0; i < arrivalList.size(); i++) {
+                System.out.println(arrivalList.get(i));
+            }
+        }
+    }
+
+
+    public int searchTicketWithName(){
+        if (isNull()){
+            return 0;
+        }
+        System.out.print("검색할 ");
+        String name = inputUserName();
+
+        for (int i = 0; i < arrivalList.size(); i++) {
+            if (arrivalList.get(i).getName().equals(name)) {
+                System.out.println((arrivalList.get(i)).toString());
+            }
+            return i;
+        }
+        System.out.println(name + "님을 찾을 수 없습니다.");
+        return 0;
+    }
+
+    public void updateTicket(){
+        System.out.println("""
+                =====**항공권수정하기**=====
+                1. 이름 수정하기
+                2. 도착지 수정하기
+                =========================""");
+        System.out.print("수정할 항목을 선택하세요 : ");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (choice) {
+            case 1 :
+                if (isNull()){
+                    break;
+                } else {
+                    printAllTickets();
+                    int index = searchTicketWithName();
+                    if (index != 0) {
+                        arrivalList.get(index).setName(nameForUpdate());
+                    }
+                }
+            case 2 :
+
+        }
+    }
+
+    public String nameForUpdate(){
+        System.out.print("변경할 ");
+        return inputUserName();
+    }
+
+
+
+
+
+
+
+//    public void updateTicketWithName(){
+//        if (arrivalList.isEmpty()) {
+//            System.out.println("저장된 항공권 내역이 없습니다.\n항공권을 등록 후 이용해 주세요.");
+//            return;
+//        }
+//        printAllTickets();
+//        searchTicketWithName();
+//    }
+
+
 
 }
