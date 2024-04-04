@@ -1,11 +1,5 @@
 package com.smtm.atm.dto;
 
-
-import com.smtm.atm.service.FlightService;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class FlightInformation extends UserInformation {
 
     private String flightTicketCode;
@@ -54,9 +48,9 @@ public class FlightInformation extends UserInformation {
         return "========================================" +
                "\n이름 : " + getName() +
                " | 나이 : " + getAge() +
-               "\n 항공권 번호 : "  + getArrival() +
-               "\n출발지" + FlightInformation.DEPARTURE +
-               " | 도착지 : " + getFlightTicketCode() +
+               "\n항공권 번호 : "  + getFlightTicketCode() +
+               "\n출발지 : " + FlightInformation.DEPARTURE +
+               " | 도착지 : " + getArrival() +
                "\n========================================" ;
 
     }

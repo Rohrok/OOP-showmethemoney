@@ -38,7 +38,6 @@ public class CommonInformation {
     public String createTicketNumber(String countryCode) {
         int randomNum = new Random().nextInt(100, 999);
         String ticketNum = countryCode + (Integer.toString(randomNum));
-        System.out.println("ticketNum = " + ticketNum);
         return ticketNum;
     }
 
