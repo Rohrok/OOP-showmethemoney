@@ -1,6 +1,7 @@
 package com.smtm.atm.service;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class CommonInformation {
 
@@ -17,9 +18,10 @@ public class CommonInformation {
      *          영문이외(한글, 특수문자 다른언어)인 경우 false
      * */
     public boolean checkInputName(String name) {
-
+        Scanner scanner = new Scanner(System.in);
         if(name.isBlank()){
             System.out.println("이름을 입력해주세요.");
+            scanner.nextLine();
             return false;
         } else if (!name.matches(REGEX_ONLY_ENG)) {
             System.out.println("이름은 영문만 입력해주세요.");
