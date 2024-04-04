@@ -147,9 +147,15 @@
 <img height=auto width=300px src="https://github.com/ssg-240304-java2/OOP-showmethemoney/assets/90363122/f4aa49ef-2ae9-47f2-9dfe-b5c1285b2456">
 </div>
 </details>
+
 <br>
 
-## 8. 프로젝트 후기
+## 8. 테스트 진행 - 🔗 [테스트 케이스 문서](https://github.com/ssg-240304-java2/OOP-showmethemoney/wiki/%5B%ED%95%AD%EA%B3%B5%EA%B6%8C-%EB%B0%9C%EA%B8%89-%EA%B4%80%EB%A6%AC%5D--%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%BC%80%EC%9D%B4%EC%8A%A4)
+- 설계문서의 순서도를 보고 테스트케이스 작성후 테스트를 진행했습니다.
+
+<br>
+
+## 9. 프로젝트 후기
 
 ### 👑 노영록
 - 프로젝트를 진행하기 전 주제를 정하고 가장 먼저 든 생각이 어떻게 코드를 짜야 할까였다.
