@@ -5,13 +5,15 @@ public class FlightInformation extends UserInformation {
     private String flightTicketCode;
     public static final String DEPARTURE = "KOR";
     private String arrival;
+    private String passengerName;
 
     public FlightInformation(String flightTicketCode) {
         this.flightTicketCode = flightTicketCode;
     }
 
-    public FlightInformation(String name, int age, String flightTicketCode) {
+    public FlightInformation(String name, int age,String arrival, String flightTicketCode) {
         super(name, age);
+        this.arrival = arrival;
         this.flightTicketCode = flightTicketCode;
     }
 
@@ -29,5 +31,9 @@ public class FlightInformation extends UserInformation {
 
     public void setArrival(String arrival) {
         this.arrival = arrival;
+    }
+
+    public String getPassengerName() {
+        return passengerName;
     }
 }

@@ -8,13 +8,20 @@ import java.util.Scanner;
 
 public class FlightService {
 
-    private List<FlightInformation> arrivalList = null;
-    private Scanner scanner = new Scanner(System.in);
-    private CommonInformation commonInformation = new CommonInformation();
+    private final static List<FlightInformation> arrivalList = new ArrayList<>();
+    private final CommonInformation commonInformation = new CommonInformation();
+    private final Scanner scanner = new Scanner(System.in);
 
     public FlightService() {
+    }
 
-        arrivalList = new ArrayList<>();
+    public boolean findUser(String name) {
+        for (FlightInformation flightInformation : arrivalList) {
+            if (flightInformation.getPassengerName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -22,19 +29,18 @@ public class FlightService {
      * @param age
      * @param countryCode
      */
-    public void addFlightInfo(String name, int age, String countryCode) {
+    public void addFlightInfo(String name, int age, String arrival, String countryCode) {
 
         // 티켓넘버 생성
         String tikectNum = commonInformation.createTicketNumber(countryCode);
 
         //승객정보 등록
-        FlightInformation flightInformation = new FlightInformation(name, age, tikectNum);
+        FlightInformation flightInformation = new FlightInformation(name, age, arrival, tikectNum);
         arrivalList.add(flightInformation);
-        System.out.println(arrivalList.get(0).toString());
+        System.out.println(arrivalList.get(0).getArrival());
     }
 
     public String inputUserName() {
-
 
         while (true) {
             String name = "";
@@ -44,10 +50,10 @@ public class FlightService {
                 return name.toUpperCase();
             }
         }
-
     }
 
     public String inputArrivalCountryInfo() {
+
         while (true) {
             System.out.println("""
                     **********************
@@ -66,13 +72,13 @@ public class FlightService {
                     **********************""");
             System.out.print("도착지를 입력해주세요. : ");
             String destination = scanner.nextLine();
+
             String countryCode = commonInformation.getCountry(destination);
 
             if (countryCode != null) {
-                return countryCode;
+                return destination + "," + countryCode;
             }
         }
-
     }
 
     public int inputCheckAge() {
@@ -84,5 +90,14 @@ public class FlightService {
             return 0;
         }
         return age;
+    }
+
+    public void updateTicket(String name, String code, String destination) {
+        for (FlightInformation flightInformation : arrivalList) {
+            if (flightInformation.getPassengerName().equals(name)) {
+                flightInformation.setFlightTicketCode(code);
+                flightInformation.setArrival(destination);
+            }
+        }
     }
 }
