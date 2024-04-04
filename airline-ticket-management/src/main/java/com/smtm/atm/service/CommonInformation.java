@@ -1,45 +1,44 @@
 package com.smtm.atm.service;
 
 import java.util.Random;
+import java.util.Scanner;
 
 public class CommonInformation {
 
     private static final String REGEX_ONLY_ENG = "^[a-z|A-Z]*$";
     private static final String REGEX_ONLY_KOR = "^[가-힣]*$";
 
-
     /**
      * 입력받은 이름이 영문으로 되어있는지 확인
-     * @param name
-     *        사용자가 입력한 이름
+     *
+     * @param name 사용자가 입력한 이름
      * @return boolean
-     *          영문으로만 이뤄진 경우 true
-     *          영문이외(한글, 특수문자 다른언어)인 경우 false
-     * */
+     * 영문으로만 이뤄진 경우 true
+     * 영문이외(한글, 특수문자 다른언어)인 경우 false
+     */
     public boolean checkInputName(String name) {
-
-        if(name.isBlank()){
+        Scanner scanner = new Scanner(System.in);
+        if (name.isBlank()) {
             System.out.println("이름을 입력해주세요.");
             return false;
         } else if (!name.matches(REGEX_ONLY_ENG)) {
             System.out.println("이름은 영문만 입력해주세요.");
             return false;
         }
-        return  true;
-
+        return true;
     }
 
-    public boolean checkInputAge(int age){
+    public boolean checkInputAge(int age) {
 
         return false;
     }
 
     //항공권 번호 생성
-    public String createTicketNumber(String ticket) {
-        int randomNum = new Random().nextInt(100,999);
-        String tikecketNum = ticket+ (Integer.toString(randomNum));
-        System.out.println("tikecketNum = " + tikecketNum);
-        return tikecketNum;
+    public String createTicketNumber(String countryCode) {
+        int randomNum = new Random().nextInt(100, 999);
+        String ticketNum = countryCode + (Integer.toString(randomNum));
+        System.out.println("ticketNum = " + ticketNum);
+        return ticketNum;
     }
 
 
