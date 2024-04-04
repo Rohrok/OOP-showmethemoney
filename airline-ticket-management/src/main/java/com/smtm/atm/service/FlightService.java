@@ -30,11 +30,10 @@ public class FlightService {
         //승객정보 등록
         FlightInformation flightInformation = new FlightInformation(name,age,arrival,ticketNum);
         arrivalList.add(flightInformation);
-        System.out.println(arrivalList.get(0).getArrival());
+        System.out.println(arrivalList.get(0).toString());
     }
 
     public String inputUserName() {
-
 
         while (true) {
             System.out.print("이름을 입력하세요 : ");
@@ -106,18 +105,19 @@ public class FlightService {
     public int searchTicketWithName(){
         if (isNull()){
             return 0;
-        }
-        System.out.print("검색할 ");
-        String name = inputUserName();
+        } else {
+            System.out.print("검색할 ");
+            String name = inputUserName();
 
-        for (int i = 0; i < arrivalList.size(); i++) {
-            if (arrivalList.get(i).getName().equals(name)) {
-                System.out.println((arrivalList.get(i)).toString());
+            for (int i = 0; i < arrivalList.size(); i++) {
+                if (arrivalList.get(i).getName().equals(name)) {
+                    System.out.println((arrivalList.get(i)).toString());
+                    return i;
+                }
             }
-            return i;
+            System.out.println(name + "님을 찾을 수 없습니다.");
+            return 0;
         }
-        System.out.println(name + "님을 찾을 수 없습니다.");
-        return 0;
     }
 
     public void updateTicketInformation(int index, String ticketNumber, String destination) {
@@ -145,6 +145,8 @@ public class FlightService {
                     int index = searchTicketWithName();
                     if (index != 0) {
                         arrivalList.get(index).setName(nameForUpdate());
+                        System.out.println(arrivalList.get(index).toString());
+                        System.out.println("변경이 완료되었습니다.");
                     }
                 }
             case 2 :
@@ -179,14 +181,4 @@ public class FlightService {
         System.out.print("변경할 ");
         return inputUserName();
     }
-
-//    public void updateTicketWithName(){
-//        if (arrivalList.isEmpty()) {
-//            System.out.println("저장된 항공권 내역이 없습니다.\n항공권을 등록 후 이용해 주세요.");
-//            return;
-//        }
-//        printAllTickets();
-//        searchTicketWithName();
-//    }
-
 }
