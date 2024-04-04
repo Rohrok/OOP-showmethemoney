@@ -11,13 +11,14 @@ public class TicketManager {
         Scanner scanner = new Scanner(System.in);
         FlightService flightService = new FlightService();
         while (true) {
+
             System.out.println("""
                     1. 항공권 발급
                     2. 항공권 정보 표시
                     3. 항공권 검색
                     4. 항공권 정보 변경
                     0. 시스템 종료""");
-            System.out.print("메뉴를 입력해주세요. : ");
+            System.out.print("메뉴를 입력해주세요: ");
             int menu = scanner.nextInt();
             scanner.nextLine();
             switch (menu) {
@@ -37,6 +38,7 @@ public class TicketManager {
                 case 4:
                     flightService.updateTicket();
                     break;
+
                 case 0:
                     System.out.println("시스템을 종료합니다.");
                     return;
@@ -45,5 +47,4 @@ public class TicketManager {
             }
         }
     }
-
 }
