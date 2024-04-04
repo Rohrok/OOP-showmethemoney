@@ -3,15 +3,15 @@ package com.smtm.atm.controller;
 import com.smtm.atm.service.CommonInformation;
 import com.smtm.atm.service.FlightService;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
 public class TicketManager {
 
-    static Scanner scanner = new Scanner(System.in);
-    private final FlightService flightService = new FlightService();
-    private final CommonInformation commonInformation = new CommonInformation();
-
-
     public void menu(){
+
+        Scanner scanner = new Scanner(System.in);
+        FlightService flightService = new FlightService();
         System.out.println("""
                 1. 항공권 발급
                 2. 항공권 정보 표시
@@ -30,9 +30,10 @@ public class TicketManager {
                 System.out.println("항공권이 발급되었습니다.");
                 break;
             case 2:
-
+                flightService.printAllTickets();
                 break;
             case 3:
+                flightService.searchTicketWithName();
                 break;
             case 4:
                 String userName = null;
@@ -64,6 +65,8 @@ public class TicketManager {
 
 //                System.out.println("항공권을 새로 발급했습니다.");
 //                break;
+                flightService.updateTicket();
+                break;
             case 0:
                 System.out.println("시스템을 종료합니다.");
                 return;
