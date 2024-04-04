@@ -8,30 +8,22 @@ import java.util.Scanner;
 
 public class FlightService {
 
-    private List<FlightInformation> arrivalList = new ArrayList<>();
-
+    private List<FlightInformation> arrivalList = null;
     private Scanner scanner = new Scanner(System.in);
     private CommonInformation commonInformation = new CommonInformation();
 
     public FlightService() {
 
+        arrivalList = new ArrayList<>();
     }
-
-    /**/
-    public void setting(){
-        arrivalList.add(0, new FlightInformation("LEECHANGMIN", 30, "USA"));
-    }
-
-
 
 
     /**
      * @param name
      * @param age
      * @param countryCode
-     * */
-    public void addFlightInfo(String name, int age, String countryCode){
-        int count = 0; /*필요해 보여서 for index 사용 가능 하면 static 해도 될 듯?*/
+     */
+    public void addFlightInfo(String name, int age, String countryCode) {
 
         // 티켓넘버 생성
         /*tikect>> ticket*/
@@ -39,11 +31,10 @@ public class FlightService {
         //승객정보 등록
         FlightInformation flightInformation = new FlightInformation(name,age,ticketNum); // 전달인자 구성에 arrival 누락되어있습니다!
         arrivalList.add(flightInformation);
-        System.out.println(arrivalList.get(count));
-
+        System.out.println(arrivalList.get(0).toString());
     }
 
-    public String inputUserName(){
+    public String inputUserName() {
 
         while (true) {
             System.out.print("이름을 입력하세요 : ");
@@ -55,27 +46,28 @@ public class FlightService {
 
     }
 
-    public String inputArrivalCountryInfo(){
-        while (true){
+    public String inputArrivalCountryInfo() {
+        while (true) {
             System.out.println("""
-                **********************
-                === 도착지를 선택하세요 ===
-                        미국
-                        중국
-                        일본
-                        독일
-                        영국
-                        이탈리아
-                        프랑스
-                        멕시코
-                        남극
-                        홍콩
-                ======================
-                **********************""");
+                    **********************
+                    === 도착지를 선택하세요 ===
+                            미국
+                            중국
+                            일본
+                            독일
+                            영국
+                            이탈리아
+                            프랑스
+                            멕시코
+                            남극
+                            홍콩
+                    ======================
+                    **********************""");
             System.out.print("도착지를 입력해주세요. : ");
             String destination = scanner.nextLine();
             String countryCode = commonInformation.getCountry(destination);
-            if(countryCode !=null){
+
+            if (countryCode != null) {
                 return countryCode;
             }
         }

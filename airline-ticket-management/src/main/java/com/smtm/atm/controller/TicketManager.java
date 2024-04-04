@@ -12,7 +12,6 @@ public class TicketManager {
 
         Scanner scanner = new Scanner(System.in);
         FlightService flightService = new FlightService();
-        flightService.setting(); ///////
         System.out.println("""
                 1. 항공권 발급
                 2. 항공권 정보 표시
