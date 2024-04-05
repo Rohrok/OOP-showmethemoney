@@ -149,6 +149,10 @@ public class FlightService {
                     break;
                 }
             case 2 :
+                if (isNull()) {
+                    break;
+                } //if 문 추가 >> 목록이 비어있으면, 메인메뉴로 돌아간다.
+                printAllTickets(); // 항공권 전체 출력 후 이름 보고 치는 느낌으로 추가함.
                 String userName = null;
                 String ticketNumber = null;
                 String destination = null;
@@ -158,6 +162,9 @@ public class FlightService {
 
                     // 이름 검색해서 index 반환
                     index = searchTicketWithName();
+                    if (index == -1 ) {
+                        return;
+                    }
 
                     //arrival에 미국, USA 담기    "미국,USA".split
                     String[] arrival = inputArrivalCountryInfo().split(",");
@@ -167,7 +174,7 @@ public class FlightService {
                     ticketNumber = commonInformation.createTicketNumber(arrival[1]);
 
                     destination = arrival[0];
-
+                    System.out.println("변경이 완료되었습니다."); //추가함
                     break;
                 }
 
