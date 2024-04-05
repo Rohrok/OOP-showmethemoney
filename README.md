@@ -96,15 +96,16 @@
 ## 6. 설계문서
 
 - ### 순서도(Flow Chart) - 🔗[자세히 보기](https://github.com/ssg-240304-java2/OOP-showmethemoney/wiki/%5B%ED%95%AD%EA%B3%B5%EA%B6%8C-%EB%B0%9C%EA%B8%89-%EA%B4%80%EB%A6%AC%5D-%EC%88%9C%EC%84%9C%EB%8F%84)
-<img src="https://private-user-images.githubusercontent.com/90363122/319667335-020bc88f-f55d-4878-8990-d643d3ed7c2d.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIyNDY5NjcsIm5iZiI6MTcxMjI0NjY2NywicGF0aCI6Ii85MDM2MzEyMi8zMTk2NjczMzUtMDIwYmM4OGYtZjU1ZC00ODc4LTg5OTAtZDY0M2QzZWQ3YzJkLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDA0VDE2MDQyN1omWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWVlZGUxN2MyZDUxMDI2Y2EwZGIyNDBlZDdjYjUyNWUzMmMwMDZlNDdiNmVlZTIyYzU4Yjk5NWM5YWU1MTMyNWQmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.XA0k_xyp7iIdiVdhJ116E_AQ337hOWdrbSa4zB6qPvQ" height=500px width=auto >
+<img src="https://github.com/ssg-240304-java2/OOP-showmethemoney/assets/90363122/0753c482-395d-43bc-8a12-36d860ebf4c7" height=500px width=auto >
 
 - ### 클래스 다이어그램(Class Diagram) - 🔗[자세히 보기](https://github.com/ssg-240304-java2/OOP-showmethemoney/wiki/%5B%ED%95%AD%EA%B3%B5%EA%B6%8C-%EB%B0%9C%EA%B8%89-%EA%B4%80%EB%A6%AC%5D-%ED%81%B4%EB%9E%98%EC%8A%A4-%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8)
-<img src="https://private-user-images.githubusercontent.com/90363122/319669907-ed8b453a-98b5-41c6-a249-3cdeb0e6e079.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTIyNDcwOTEsIm5iZiI6MTcxMjI0Njc5MSwicGF0aCI6Ii85MDM2MzEyMi8zMTk2Njk5MDctZWQ4YjQ1M2EtOThiNS00MWM2LWEyNDktM2NkZWIwZTZlMDc5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDA0MDQlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwNDA0VDE2MDYzMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTNhYzYwNmMwN2JhOWFkZjM5MGM1Yzg5NzUwMGI4OTUwMTVkMGIzNDY1MThkOGIzYTBjYjdlZWMwNmEyNDc5OTkmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.LbXpCogb7k-2pKpKeJsRMvLfFk08Joavf0RrZ80Z_AY" height=500px width=auto >
+<img src="https://github.com/ssg-240304-java2/OOP-showmethemoney/assets/90363122/ed8b453a-98b5-41c6-a249-3cdeb0e6e079" height=500px width=auto >
 
 <br>
 
 ## 7. 메뉴별 기능
-<img src="https://github.com/ssg-240304-java2/OOP-showmethemoney/assets/90363122/3bb1372f-bd7b-486d-9227-53656d51c279" height=auto width=500px >
+<img src="https://github.com/ssg-240304-java2/OOP-showmethemoney/assets/90363122/090381b8-21c8-4521-96b8-adfbb2fc0b19" height=auto width=500px >
+
 
 <details>
 <summary> <h3>[메뉴표시]</h3> </summary>
