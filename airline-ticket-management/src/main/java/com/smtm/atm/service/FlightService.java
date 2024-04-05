@@ -102,7 +102,7 @@ public class FlightService {
 
     public int searchTicketWithName(){
         if (isNull()){
-            return 0;
+            return -1;
         } else {
             System.out.print("선택할 ");
             String name = inputUserName();
@@ -114,7 +114,7 @@ public class FlightService {
                 }
             }
             System.out.println(name + "님을 찾을 수 없습니다.");
-            return 0;
+            return -1;
         }
     }
 
@@ -141,7 +141,7 @@ public class FlightService {
                 } else {
                     printAllTickets();
                     int index = searchTicketWithName();
-                    if (index != 0) {
+                    if (index != -1) {
                         arrivalList.get(index).setName(nameForUpdate());
                         System.out.println("변경이 완료되었습니다.");
                         break;
