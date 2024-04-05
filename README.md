@@ -137,6 +137,7 @@
 <details>
 <summary> <h3>[항공권 정보 수정 - 이름 변경]</h3> </summary>
 <div markdown="1">
+    <img height=auto width=300px src="https://github.com/ssg-240304-java2/OOP-showmethemoney/assets/90363122/12345593-0c9c-4f88-a9ed-6b9be854f2d2">
 </div>
 </details>
 
